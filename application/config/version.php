@@ -1,7 +1,7 @@
 <?php
 /*
  * LimeSurvey
- * Copyright (C) 2007-2016 The LimeSurvey Project Team / Carsten Schmitz
+ * Copyright (C) 2007-2019 The LimeSurvey Project Team / Carsten Schmitz
  * All rights reserved.
  * License: GNU/GPL License v3 or later, see LICENSE.php
  * LimeSurvey is free software. This version may have been modified pursuant
@@ -12,9 +12,10 @@
  */
 
 
-$config['versionnumber'] = '3.17.13';
+$config['versionnumber'] = '3.20.1';
 $config['dbversionnumber'] = 359;
 $config['buildnumber'] = '';
 $config['updatable'] = true;
-$config['assetsversionnumber'] = '30094';
+$config['templateapiversion'] = 3;
+$config['assetsversionnumber'] = '30106';
 return $config;

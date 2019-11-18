@@ -34,6 +34,212 @@ Thank you to everyone who helped with this new release!
 
 CHANGE LOG
 ------------------------------------------------------
+Changes from 3.20.0 (build 191112) to 3.20.1 (build 191114) November 14, 2019
+-Fixed issue: Skipping on invitation/reminder sendout (Carsten Schmitz)
+-Fixed issue #15523: View saved but not submitted - filters do not work (LouisGac)
+-Fixed issue #15329: Missing indication for "{" and "}" at group relevance field (LouisGac)
+-Fixed issue #14766: Possible collision with PHPSESSID cookies on the same domain (Carsten Schmitz)
+#Updated translation: Polish by elissa
+#Updated translation: Polish (Informal) by elissa
+#Updated translation: Hungarian by kkd
+#Updated translation: German by eddylackmann
+#Updated translation: German (Informal) by c_schmitz, eddylackmann
+#Updated translation: French (France) by eddylackmann
+
+
+Changes from 3.19.3 (build 191023) to 3.20.0 (build 191112) November 12, 2019
+-New features #15532: Show warnings when implicit alphabetical compare (#1341) (Denis Chenu)
+-Fixed issue: generate PDF for a single stat is not working (LouisGac)
+-Fixed issue: Template api version compatibility (Eddy Lackmann)
+-Fixed issue: Slow import/copy survey if XSS filter is activated (Carsten Schmitz)
+-Fixed issue: Export printable Survey not working with massive action (Eddy Lackmann)
+-Fixed issue #15532: Show warnings when implicit alphabetical compare is used in expressions (Denis Chenu)
+-Fixed issue #15430: Bars at statistics are often hardly visible / Wrong bar colors (Patrick Teichmann)
+
+
+Changes from 3.19.2 (build 191017) to 3.19.3 (build 191023) October 23, 2019
+-Fixed issue: statistics graph for Array text question type is not displayed (Dominik Vitt)
+-Fixed issue: No Access-Control header in RPC (lacrioque)
+-Fixed issue #15450: The GridView in "Saved but not submitted[...]" is incomplete and lacks pagination and filtering (lacrioque)
+-Fixed issue #15053: Error with non-numeric SID on pgsql (Jean-Sébastien B)
+-New translation: Spanish (Colombia) - translation kindly provided by https://www.sugeek.co/ (Carsten Schmitz)
+
+
+
+Changes from 3.19.1 (build 191009) to 3.19.2 (build 191017) October 17, 2019
+-Fixed issue: {SID} placeholder can't be used in invite_participants API method (Dominik Vitt)
+-Fixed issue: Comparing two string with greater-than operation fails (Olle Haerstedt)
+-Fixed issue: Captcha sometimes not visible because font file could not be found (Carsten Schmitz)
+-Fixed issue [security] #15411: CVE-2019-17660 : XSS in quick edit (#1333) (Denis Chenu)
+-Fixed issue #15389: Line breaks at question text get lots at "print answers" overview (Dominik Vitt)
+-Fixed issue #15368: Filtered ranking didn't appear if in same page than the filter (Denis Chenu)
+-Fixed issue #14628: Array numbers question type doesn't include proper subquestion and answer details at "print answers" overview (Dominik Vitt)
+-Fixed issue #13312: Get all answers for dualscale questions (Jakob Wögerbauer)
+-Fixed issue #13312: Get all answers for dualscale questions (Jakob Wögerbauer)
+#Updated translation: Swedish by vectorson
+#Updated translation: Spanish (Mexican) by sugeek
+#Updated translation: Slovak by dusanm
+#Updated translation: Russian by vipgroup
+#Updated translation: Polish by elissa
+#Updated translation: Polish (Informal) by elissa
+#Updated translation: Dutch by Han
+#Updated translation: Dutch (Informal) by Han
+#Updated translation: Czech by jelen1
+#Updated translation: Czech (Informal) by VBraun, jelen1
+#Updated translation: Croatian by dominikvitt, qualitatuvic
+
+
+
+Changes from 3.19.0 (build 191008) to 3.19.1 (build 191009) October 9, 2019
+-Fixed issue: Syntax error in saved list view (Olle Haerstedt)
+
+
+Changes from 3.18.0 (build 190923) to 3.19.0 (build 191008) October 8, 2019
+-New feature: generate twig cache for questions from command line. (LouisGac)
+-New feature: allow translation in theme description (LouisGac)
+-Fixed issue [security]: SQL injection in participant model (James Mullen, edgescan) (Olle Haerstedt)
+-Fixed issue [security] : no CRSF control when delete saved response (Denis Chenu)
+-Fixed issue #15369: Ranking with filter didn't save all value (Denis Chenu)
+-Fixed issue #15350: Unable to delete saved reponse (Denis Chenu)
+-Fixed issue #15348: Ranking question does not save answers when array (Olle Haerstedt)
+-Fixed issue #15334: Option 'Delete from the central panel and associated surveys' would not properly delete in CPDB (WalAffe)
+-Fixed issue #15326: beforesurveybarrender view surveybar_view doesn't style dropdown menu correctly (Adam Zammit)
+-Fixed issue #15305: Export survey participants by status (Dominik Vitt)
+-Fixed issue #15162: Images in the answer options of an array are shown on the very left when switch to Arabic on small screens (Dominik Vitt)
+-Fixed issue #15147: PHP notice message when exporting survey as TSV (Dominik Vitt)
+-Fixed issue #15030: Css and font issue, Arabic is not displayed properly (Dominik Vitt)
+-Fixed issue #15008: Captcha for later use not working in IE11 (Eddy Lackmann)
+#Updated translation: Turkish by eddylackmann
+#Updated translation: Thai by Mazi, tomzt
+#Updated translation: Swahili by eddylackmann
+#Updated translation: Slovak by dusanm
+#Updated translation: Russian by vipgroup, ddrmoscow
+#Updated translation: Romanian by eddylackmann
+#Updated translation: Portuguese (Portugal) by effgarces
+#Updated translation: Polish by elissa
+#Updated translation: Polish (Informal) by elissa
+#Updated translation: Persian by mdavoodian
+#Updated translation: Persian by ESH
+#Updated translation: Norwegian (Bokmål) by pmonstad
+#Updated translation: Korean by Mazi
+#Updated translation: Japanese by Mazi
+#Updated translation: Italian by lfanfoni
+#Updated translation: Italian (Informal) by lfanfoni
+#Updated translation: Hungarian by vargazsoltivan, kkd, cdorin
+#Updated translation: German by marvinthemartian13,  c_schmitz
+#Updated translation: German (Informal) by marvinthemartian13,  c_schmitz
+#Updated translation: French (France) by eddylackmann, b00z00,  DenisChenu
+#Updated translation: Dutch by Han
+#Updated translation: Dutch (Informal) by Han
+#Updated translation: Danish by Mikkel
+#Updated translation: Czech by jelen1
+#Updated translation: Czech (Informal) by slansky, jelen1
+#Updated translation: Croatian by dominikvitt
+#Updated translation: Chinese (Simplified) by Mazi
+#Updated translation: Catalan by qualitatuvic
+
+
+Changes from 3.17.17 (build 190918) to 3.18.0 (build 190923) September 23, 2019
+-New feature: define theme editor screens list from theme manifest. (LouisGac)
+-New feature: allow theme developers to add their own custom data for editor preview (LouisGac)
+-Fixed issue [security]: SQL injection in participant model (Olle Haerstedt)
+-Fixed issue #15309: Special characters in page "Error 403" shown as entities (Denis Chenu)
+-Fixed issue #15304: queXML "other" question attribute issue - multilingual survey (Dominik Vitt)
+#Updated translation: Russian by ddrmoscow, vipgroup
+#Updated translation: Russian by ddrmoscow
+#Updated translation: Italian by seccalisca, lfanfoni
+#Updated translation: Italian (Informal) by lfanfoni
+#Updated translation: German by HonkXL, c_schmitz
+#Updated translation: German (Informal) by c_schmitz
+#Updated translation: German (Informal) by c_schmitz
+#Updated translation: German (Informal) by c_schmitz
+#Updated translation: German (Informal) by c_schmitz
+#Updated translation: Croatian by dominikvitt
+#Updated translation: Croatian by dominikvitt
+#Updated translation: Catalan by qualitatuvic
+
+
+Changes from 3.17.16 (build 190906) to 3.17.17 (build 190918) September 18, 2019
+-New feature: allow twig tmp files generation from command line to allow GlotPress parsing (LouisGac)
+-Fixed issue: Language code not properly set in 'survey not available' screen (Carsten Schmitz)
+-Fixed issue [security] #15257: potential XSS in CPDB by super admin (Thanks to creosote) (Denis Chenu)
+-Fixed issue : unale to create dummty tokens (Denis Chenu)
+-Fixed issue #15289: potential PHP warning in question editor with question theme (Denis Chenu)
+-Fixed issue #15285: language changer doesn't work on tokens.twig (Denis Chenu)
+-Fixed issue #15279: replacement are not done in assessments (Denis Chenu)
+-Fixed issue #15243: ssl alert is shown to simple user too (#1319) (Denis Chenu)
+-Fixed issue #15237: Upload 3gpp, amr, aac audio files using File Upload Question (Denis Chenu)
+-Fixed issue #15237: Upload 3gpp, amr, aac audio files using File Upload Question (#1318) (Denis Chenu)
+-Fixed Issue: force_xmlsettings_for_survey_rendering not taken in account (LouisGac)
+-Fixed issue #15243: ssl alert is shown to simple user too (Denis Chenu)
+-Fixed issue #15218: Allow to disable SSL alert (Denis Chenu)
+#Updated translation: Turkish by kayazeren
+#Updated translation: Tagalog by Mazi
+#Updated translation: Russian by vipgroup, ddrmoscow
+#Updated translation: Portuguese (Brazil) by GabrielLF
+#Updated translation: Polish by elissa
+#Updated translation: Polish (Informal) by elissa
+#Updated translation: Norwegian (Bokmål) by pmonstad
+#Updated translation: German by eddylackmann, c_schmitz
+#Updated translation: German (Informal) by c_schmitz
+#Updated translation: Filipino by c_schmitz
+#Updated translation: Czech by jelen1
+#Updated translation: Czech (Informal) by jelen1
+#Updated translation: Catalan by qualitatuvic
+
+
+Changes from 3.17.15 (build 190903) to 3.17.16 (build 190906) September 6, 2019
+-Fixed issue: breaking js issues on IE11 (lacrioque)
+-Fixed issue : No save button when add Question (Denis Chenu)
+-Fixed issue #15229: Subquestions do not have GID changed once the parent question is moved (lacrioque)
+-Fixed issue #15228: This survey throw a Error when try to print (#1317) (Denis Chenu)
+-Fixed issue #15227: Unable to Delete Questions (lacrioque)
+-Fixed issue #15221: unable to send mail to participants - apache handler error 403 (Denis Chenu)
+
+
+Changes from 3.17.14 (build 190902) to 3.17.15 (build 190903) September 3, 2019
+Fixed issue #15207: Settings and Structure tabs are broken - no action happens
+
+Changes from 3.17.13 (build 190824) to 3.17.14 (build 190902) September 2, 2019
+-Fixed issue: setting "Show header in answers export PDFs" not taken in account (LouisGac)
+-Fixed issue: [security]XSS in admin box buttons - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]XML breakout possible on export - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]X-Frame-Options SAMEORIGIN not set by default - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]User unaware that SSL encryption should be enforced (Carsten Schmitz)
+-Fixed issue: [security]Path revelation (Carsten Schmitz)
+-Fixed issue: [security]LDAP login non-generic login message - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]LDAP login non-generic login message - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]Equation signs are not masked by default on data export (Carsten Schmitz)
+-Fixed issue: [security]Equation signs are not masked by default on data export (Carsten Schmitz)
+-Fixed issue: [security]CSRF cookie missing HTTP only parameter- kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]Admin user without permissions can still see plugins page - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]Admin user with settings permissions can can run integrity check - kindly reported by Pavol Michalec & Frederik Koľbík (Carsten Schmitz)
+-Fixed issue: [security]Admin user with limited permissions can view/update/delete reserved menu entries (Carsten Schmitz)
+-Fixed issue: [security]Admin user can mark other user notification as read (Carsten Schmitz)
+-Fixed issue: [security] Database backup uses browser cache (Carsten Schmitz)
+-Fixed issue: [security] Browser cache used for exports (Carsten Schmitz)
+-Fixed issue: [security] #15204: Stored XSS vulnerabilities - Thanks to J. Greil from the SEC Consult Vulnerability Lab (https://www.sec-consult.com) (Denis Chenu)
+-Fixed issue: [security] #15204: Reflected XSS vulnerabilities - thanks to J. Greil from  the  SEC  Consult Vulnerability Lab (Denis Chenu)
+-Fixed issue: Survey upload self-reflecting XSS (Carsten Schmitz)
+-Fixed issue: Sidebar not working on IE11 (lacrioque)
+-Fixed issue: Memory issues if too many responses exist for the same token in a non-anonymous survey (Carsten Schmitz)
+-Fixed issue: Memory issues if too many responses exist for the same token in a non-anonymous survey (Carsten Schmitz)
+-Fixed issue: LsTutorial only working in debug mode (lacrioque)
+-Fixed issue: Language not updated on import and overwrite in CPDB (lacrioque)
+-Fixed issue: JS error in firstStartTour onShow code (#1315) (Martin Unkel)
+-Fixed issue: After survey activation the ExpressionManager cache was not updated (Carsten Schmitz)
+-Fixed issue #15212: Survey navigation shows message "Please use the survey navigation buttons...[]" instead of navigating (Carsten Schmitz)
+-Fixed issue #15209: 500 error when try to save long administrator name (Denis Chenu)
+-Fixed issue #15208: MSSQL error on 2nd page of theme (Denis Chenu)
+-Fixed issue #15199: MSSQL : date/time question are not reloaded properly (Denis Chenu)
+-Fixed issue #15197: Submitting empty menu entry crashes application ( Application Denial of Service) (lacrioque)
+-Fixed issue #15194: Unable to remove page title from PDF generated at "print answers" screen (LouisGac)
+-Fixed issue #15192: entering html code inside the answeroptions for List type questions will break/alter the html for editing answers (Patrick Teichmann)
+-Fixed issue #15188: Access Label sets list (lacrioque)
+-Fixed issue #14863: Extending core theme using the same core theme name (Eddy Lackmann)
+-Fixed issue #10168: Commit test! Ignore (Carsten Schmitz)
+-New translation: Filipino (Carsten Schmitz)
+
 Changes from 3.17.12 (build 190823) to 3.17.13 (build 190824) August 24, 2019
 -Fixed issue #15185: Surveys with less or more then 4-6 digits will not display the sidepanel (Patrick Teichmann)
 

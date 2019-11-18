@@ -251,6 +251,13 @@ function getLanguageData($bOrderByNative = false, $sLanguageCode = 'en')
     $supportedLanguages['et']['dateformat'] = 4;
     $supportedLanguages['et']['radixpoint'] = 1;
 
+    // Tagalog
+    $supportedLanguages['fil']['description'] = gT('Filipino');
+    $supportedLanguages['fil']['nativedescription'] = 'Wikang Filipino';
+    $supportedLanguages['fil']['rtl'] = false;
+    $supportedLanguages['fil']['dateformat'] = 1;
+    $supportedLanguages['fil']['radixpoint'] = 1;
+        
     // Finnish
     $supportedLanguages['fi']['description'] = gT('Finnish');
     $supportedLanguages['fi']['nativedescription'] = 'Suomi';
@@ -670,6 +677,13 @@ function getLanguageData($bOrderByNative = false, $sLanguageCode = 'en')
     $supportedLanguages['es-CL']['dateformat'] = 5;
     $supportedLanguages['es-CL']['radixpoint'] = 0;
 
+    // Spanish (Colombia)
+    $supportedLanguages['es-CO']['description'] = gT('Spanish (Colombia)');
+    $supportedLanguages['es-CO']['nativedescription'] = 'Espa&#241;ol colombiano';
+    $supportedLanguages['es-CO']['rtl'] = false;
+    $supportedLanguages['es-CO']['dateformat'] = 5;
+    $supportedLanguages['es-CO']['radixpoint'] = 0; 
+        
     // Spanish (Mexico)
     $supportedLanguages['es-MX']['description'] = gT('Spanish (Mexico)');
     $supportedLanguages['es-MX']['nativedescription'] = 'Espa&#241;ol mexicano';

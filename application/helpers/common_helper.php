@@ -3287,20 +3287,17 @@ function SSLRedirect($enforceSSLMode)
 */
 function enforceSSLMode()
 {
+    $bForceSSL = ''; // off 
     $bSSLActive = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != "off") ||
     (isset($_SERVER['HTTP_FORWARDED_PROTO']) && $_SERVER['HTTP_FORWARDED_PROTO'] == "https") ||
     (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == "https"));
     if (Yii::app()->getConfig('ssl_emergency_override') !== true) {
-        $force_ssl = strtolower(getGlobalSetting('force_ssl'));
-    } else {
-        $force_ssl = 'off';
-    };
-    if ($force_ssl == 'on' && !$bSSLActive) {
+        $bForceSSL = strtolower(getGlobalSetting('force_ssl'));
+    } 
+    if ($bForceSSL == 'on' && !$bSSLActive) {
         SSLRedirect('s');
     }
-    if ($force_ssl == 'off' && $bSSLActive) {
-        SSLRedirect('');
-    };
+
 };
 
 

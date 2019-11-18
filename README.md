@@ -38,10 +38,10 @@ The absolute minimal requirements are:
 
 ### Recommended
 We recommend the following setup
- - nginx 1.4.6
- - php 5.6.x
+ - Web server: nginx (most recent stable version)
+ - PHP (most recent stable version)
     - with php-fpm, mbstring, gd2 with freetype, imap, ldap, zip, zlib and database drivers
- - mysql 5.5.50
+ - MariaDB or MySQL (most recent stable version)
 
 ## Manual
 for more information please refer to our [homepage](http://www.limesurvey.org), or have a look at the [manual](http://manual.limesurvey.org) 
@@ -60,7 +60,7 @@ We are using Scrutinizer to static check our code
 
 [![](https://raw.githubusercontent.com/LimeSurvey/LimeSurvey/master/docs/contributions/scrutinizer-logo.png "Checkout scrutinizer")](https://scrutinizer-ci.com/)
 
-We are using TravisCI to run automated tests before release
+We are using TravisCI to run automated tests before release:
 
 [![](https://raw.githubusercontent.com/LimeSurvey/LimeSurvey/master/docs/contributions/travisci-logo.png "Checkout TravisCI")](https://travis-ci.org/)
 

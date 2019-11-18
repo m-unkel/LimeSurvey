@@ -480,9 +480,7 @@ $config['showqnumcode'] = 'choose';
 * @var $force_ssl string - forces LimeSurvey to run through HTTPS or to block HTTPS
 * 	'on' =	force SSL/HTTPS to be on (This will cause LimeSurvey
 *		to fail in SSL is turned off)
-*	'off' =	block SSL/HTTPS (this prevents LimeSurvey from
-*		running through SSL)
-*	'' =	do nothing (default)
+*	Any other string value = do nothing (default)
 *
 * DO NOT turn on secure unless you are sure SSL/HTTPS is working and
 * that you have a current, working, valid certificate. If you are
@@ -492,7 +490,7 @@ $config['showqnumcode'] = 'choose';
 * If LimeSurvey comes up as normal, then everything is fine. If you
 * get a page not found error or permission denied error then
 */
-$config['force_ssl'] = 'neither'; // DO not turn on unless you are sure your server supports SSL/HTTPS
+$config['force_ssl'] = 'off'; // DO not turn on unless you are sure your server supports SSL/HTTPS
 
 
 /**
@@ -509,6 +507,11 @@ $config['force_ssl'] = 'neither'; // DO not turn on unless you are sure your ser
 * it to true until you fix the problem.
 */
 $config['ssl_emergency_override'] = false;
+
+/**
+* @var $ssl_disable_alert boolean disable alert for super admin
+*/
+$config['ssl_disable_alert'] = false;
 
 /**
 * Sets if any part of LimeSUrvey may be embedded in an iframe
@@ -557,6 +560,21 @@ $config['iFileUploadTotalSpaceMB'] = 0;
 
 $config['uniq_upload_dir'] = false; // Use a single KCFinder upload directory for all surveys
 
+/**
+ * Allow to use a different MIME database for finfo_open
+ * @see https://www.php.net/manual/en/function.finfo-open.php
+ * Example : '/usr/share/misc/magic.mgc' for redhat based linux
+ */
+$config['magic_database'] = null;
+
+/**
+ * Allow to use a different magic file array 
+ * @see https://www.yiiframework.com/doc/api/1.1/CFileHelper#getExtensionByMimeType-detail
+ * This file must return a PHP array of extension by mimeTypes
+ * Example : https://github.com/LimeSurvey/LimeSurvey/blob/master/framework/utils/fileExtensions.php
+ */
+$config['magic_file'] = null;
+
 
 // defines if the CKeditor toolbar should be opened by default
 $config['ckeditexpandtoolbar'] = true;
@@ -576,6 +594,7 @@ $config['restrictToLanguages'] = '';
 * @var string
 */
 $config['RPCInterface'] = 'off';
+$config['add_access_control_header'] = 1;
 
 /**
 * This parameter sets the default session expiration time in seconds
@@ -724,6 +743,5 @@ $config['pluginCoreList'] = [
 ];
 
 $config['pluginWhitelist'] = [];
-
 return $config;
 //settings deleted

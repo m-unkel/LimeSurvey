@@ -34,6 +34,7 @@ class LSYii_ImageValidator
             $type = 'image/' . $parts[count($parts) - 1];
         } else {
             return [
+                // No translation ? send $file ?
                 'uploadresult' => 'Internal error: $file is not array or string',
                 'check' => false
             ];
@@ -52,6 +53,7 @@ class LSYii_ImageValidator
             "image/png",
             "image/jpg",
             "image/jpeg",
+            "image/ico",
             "image/gif",
             "image/svg+xml",
             "image/x-icon"

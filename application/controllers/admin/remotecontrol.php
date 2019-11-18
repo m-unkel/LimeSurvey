@@ -29,6 +29,12 @@ class remotecontrol extends Survey_Common_Action
     public function run()
     {
         Yii::import('application.helpers.remotecontrol.*');
+        
+        $setAccessControlHeader = Yii::app()->getConfig('add_access_control_header', 1);
+        if ($setAccessControlHeader == 1) {
+            header("Access-Control-Allow-Origin: *");
+        }
+           
         $oHandler = new remotecontrol_handle($this->controller);
         $RPCType = Yii::app()->getConfig("RPCInterface");
         if (Yii::app()->getRequest()->isPostRequest) {
@@ -104,6 +110,7 @@ class remotecontrol extends Survey_Common_Action
             require_once('Zend/XmlRpc/Client.php');
             
             $client = new Zend_XmlRpc_Client($serverUrl);
+            $client->getHttpClient()->setConfig(array('timeout'=>30));            
         } elseif ($RPCType == 'json') {
             Yii::app()->loadLibrary('jsonRPCClient');
             $client = new jsonRPCClient($serverUrl);

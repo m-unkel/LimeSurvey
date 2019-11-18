@@ -96,6 +96,7 @@ class TemplateConfiguration extends TemplateConfig
     public $template_extends;
     public $template_description;
 
+
     /**
      * @return string the associated database table name
      */
@@ -135,7 +136,7 @@ class TemplateConfiguration extends TemplateConfig
     /** @inheritdoc */
     public function defaultScope()
     {
-        return array('order'=> $this->getTableAlias(false, false).'.template_name');
+        return array('order'=> Yii::app()->db->quoteColumnName($this->getTableAlias(false, false).'.template_name'));
     }
 
     /**
@@ -364,6 +365,8 @@ class TemplateConfiguration extends TemplateConfig
 
     /**
      * Get an instance of a fitting TemplateConfiguration
+     * NOTE: for rendering prupose, you should never call this function directly, but rather Template::getInstance.
+     *       if force_xmlsettings_for_survey_rendering is on, then the configuration from the XML file should be loaded, not the one from database
      *
      * @param string $sTemplateName
      * @param integer $iSurveyGroupId
@@ -410,7 +413,7 @@ class TemplateConfiguration extends TemplateConfig
 
         $criteria = new CDbCriteria;
 
-        $criteria->join = 'INNER JOIN {{templates}} AS template ON t.template_name = template.name';
+        $criteria->join = 'INNER JOIN {{templates}} AS template ON '.Yii::app()->db->quoteColumnName("t.template_name").' = template.name';
         //Don't show surveyspecifi settings on the overview
         $criteria->addCondition('t.sid IS NULL');
         $criteria->addCondition('t.gsid IS NULL');
@@ -439,8 +442,8 @@ class TemplateConfiguration extends TemplateConfig
         $pageSizeTemplateView = Yii::app()->user->getState('pageSizeTemplateView', Yii::app()->params['defaultPageSize']);
         $criteria = new CDbCriteria;
 
-        $criteria->join = 'INNER JOIN {{templates}} AS template ON t.template_name = template.name';
-        $criteria->together = true; 
+        $criteria->join = 'INNER JOIN {{templates}} AS template ON '.Yii::app()->db->quoteColumnName("t.template_name").' = template.name';
+        $criteria->together = true;
         //Don't show surveyspecifi settings on the overview
         $criteria->addCondition('t.sid IS NULL');
         $criteria->addCondition('t.gsid IS NULL');
@@ -459,6 +462,8 @@ class TemplateConfiguration extends TemplateConfig
         $criteria->compare('template.description', $this->template_description, true);
         $criteria->compare('template.extends', $this->template_extends, true);
 
+
+
         $coreTemplates = Template::getStandardTemplateList();
         if ($this->template_type == 'core'){
             $criteria->addInCondition('template_name', $coreTemplates);
@@ -472,6 +477,27 @@ class TemplateConfiguration extends TemplateConfig
                 'pageSize'=>$pageSizeTemplateView,
             ),
         ));
+    }
+
+    /**
+     * Twig statements can be used in Theme description
+     */
+    public function getDescription()
+    {
+      $sDescription = $this->template->description;
+
+      // If wrong Twig in manifest, we don't want to block the whole list rendering
+      // Note: if no twig statement in the description, twig will just render it as usual
+      try {
+          $sDescription = Yii::app()->twigRenderer->convertTwigToHtml($this->template->description);
+      } catch (\Exception $e) {
+        // It should never happen, but let's avoid to anoy final user in production mode :) 
+        if (YII_DEBUG){
+          Yii::app()->setFlashMessage("Twig error in template ".$this->template->name." description <br> Please fix it and reset the theme <br>".$e, 'error');
+        }
+      }
+
+      return $sDescription;
     }
 
     /**

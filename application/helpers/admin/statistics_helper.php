@@ -647,6 +647,9 @@ class statistics_helper
             // This question type then can provide a % of the question answered in the summary.
             $alist[] = array("Answer", gT("Answer"), $mfield);
             $alist[] = array("NoAnswer", gT("No answer"), $mfield);
+            if ($qtype == ";"){
+                $qqid = $fielddata['qid']; // setting $qqid variable to parent qid enables graph for Array Text to be shown
+            }
         }
 
         //Q - Multiple short text
@@ -2129,7 +2132,7 @@ class statistics_helper
                     $aData['charttype'] = $charttype;
                     $aData['sChartname'] = '';
                     $aData['grawdata'] = $grawdata;
-                    $aData['color'] = rand(0, 72); // random truc much
+                    $aData['color'] = 0; // random truc much
                     $aData['COLORS_FOR_SURVEY'] = $COLORS_FOR_SURVEY;
                     // Output graph
                     $statisticsoutput .= Yii::app()->getController()->renderPartial('/admin/export/generatestats/simplestats/_statisticsoutput_graphs', $aData, true);
@@ -3436,7 +3439,7 @@ class statistics_helper
                 $aData['charttype'] = (isset($charttype)) ? $charttype : 'Bar';
                 $aData['sChartname'] = '';
                 $aData['grawdata'] = $grawdata;
-                $aData['color'] = rand(0, 70);
+                $aData['color'] = 0;
                 $aData['COLORS_FOR_SURVEY'] = $COLORS_FOR_SURVEY;
                 $aData['lbl'] = $lbl;
                 ///
